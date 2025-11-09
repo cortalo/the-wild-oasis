@@ -1,17 +1,20 @@
 import styled from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const H1 = styled.h1`
   font-size: 30px;
   font-weight: 600;
-  background-color: yellow;
+  background-color: var(--color-brand-600);
 `;
 
 function App() {
   return (
-    <div>
-      <H1>The Wild Oasis</H1>
-      <Button>Check in</Button>
-    </div>
+    <>
+      <GlobalStyles />
+      <div>
+        <H1>The Wild Oasis</H1>
+      </div>
+    </>
   );
 }
 
