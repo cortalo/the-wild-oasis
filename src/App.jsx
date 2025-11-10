@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import Heading from "./ui/Heading";
+import Row from "./ui/Row";
+import Button from "./ui/Button";
+import Input from "./ui/Input";
 
 const StyledApp = styled.main`
-  background-color: orangered;
+  /* background-color: orangered; */
   padding: 20px;
 `;
 
@@ -12,9 +15,27 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Heading as="h1">The</Heading>
-        <Heading as="h2">The</Heading>
-        <Heading as="h3">The</Heading>
+        <Row>
+          <Row type="horizontal">
+            <Heading as="h1">The Wild Oasis</Heading>
+
+            <div>
+              <Heading as="h2">Check in and out</Heading>
+              <Button>Check in</Button>
+              <Button variations="secondary" size="medium">
+                Check out
+              </Button>
+            </div>
+          </Row>
+
+          <Row>
+            <Heading as="h3">Form</Heading>
+            <form>
+              <Input type="number" placeholder="Number of guests"></Input>
+              <Input type="number" placeholder="Number of guests"></Input>
+            </form>
+          </Row>
+        </Row>
       </StyledApp>
     </>
   );
