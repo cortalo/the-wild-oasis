@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import Heading from "../ui/Heading";
 import { getAgenda } from "../services/apiAgenda";
 
+const daysOfWeek = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
 const getWeekDates = (today) => {
   // const today = new Date();
   const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
@@ -26,7 +36,7 @@ const getWeekDates = (today) => {
 };
 
 function Agenda() {
-  const [agendas, setAgendas] = useState("[]");
+  const [agendas, setAgendas] = useState([]);
 
   useEffect(function () {
     getAgenda().then((data) => setAgendas(data));
@@ -42,7 +52,10 @@ function Agenda() {
     <>
       <Heading as="h1">Agenda</Heading>
       {weekDates.map((date, index) => (
-        <p key={index}>{date.toLocaleDateString()}</p>
+        <p key={index}>
+          {" "}
+          {daysOfWeek[index]} : {date.toLocaleDateString()}
+        </p>
       ))}
       {agendas.map((agenda, index) => (
         <p key={index}>
