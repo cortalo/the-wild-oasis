@@ -87,9 +87,9 @@ function MainNav() {
             Settings
           </StyledNavLink>
         </li>
-        <li>
+        {/* <li>
           <StyledNavLink to="/agenda">Agenda</StyledNavLink>
-        </li>
+        </li> */}
       </NavList>
     </nav>
   );
